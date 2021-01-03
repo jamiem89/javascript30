@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detection</title>
+  <!-- <script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script> -->
+</head>
+<body>
+<div class="locked">
+    <h1>DO NOT ENTER</h1>
+</div>
+
+<style>
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+    }
+    .locked {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        width: 100%;
+    }
+
+    .active {
+        background: black;
+        color: white;
+    }
+    .active .h1 {
+        color: white;
+        font-size: 2em; 
+    }
+    
+</style>
+
+<script>
+    const lockScreen = document.querySelector('.locked');
+    const status = document.querySelector('.locked h1');
+    const pressedKeys = [];
+    const code = `jamie`;
+
+    window.addEventListener('keyup', (e) => {
+        pressedKeys.push(e.key);
+        pressedKeys.splice(-code.length - 1, pressedKeys.length - code.length);
+        console.log(pressedKeys);
+
+        if(pressedKeys.join(``).includes(code)) {
+            console.log('code entered');
+            lockScreen.classList.add('active');
+            status.textContent = `Welcome`
+        } else {
+            lockScreen.classList.remove('active');
+            status.textContent = `Denied`
+        }
+    })
+</script>
+</body>
+</html>
