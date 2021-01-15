@@ -6,6 +6,29 @@
 </head>
 <body>
   <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
+
+  <ul class="to-sort">
+      <li><a href="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda officia eos molestiae molestias asperiores modi quae. Aut voluptate, dolores quas ut quidem et omnis nisi rem sed expedita minus repellat.</a></li>
+      <li><a href="">Accusantium iste, delectus tempore esse quia ullam quasi corporis impedit aperiam porro ut, perferendis magni et? Debitis doloremque numquam quas odio porro, voluptatem dolorum, sit earum adipisci nihil, quam aspernatur.</a></li>
+      <li><a href="">Molestias quod labore itaque cumque vero praesentium provident nobis nemo, nisi ad accusamus amet minima? Veniam voluptatum laudantium nesciunt, eos tenetur harum perspiciatis, pariatur, dolorum eum reiciendis esse omnis consectetur.</a></li>
+      <li><a href="">Porro dolores, quasi tempore accusamus sit similique facilis itaque facere. Aspernatur adipisci voluptate id nam? Eum, pariatur. Sint temporibus, nesciunt corporis earum provident nulla dolorum ipsa deleniti repellat maiores esse.</a></li>
+      <li><a href="">Voluptatibus error reprehenderit quis ipsam minus, provident illo. Aut laborum eaque ea quam delectus. Nisi impedit enim cumque, facere, sed iusto nihil numquam eligendi, voluptatem consectetur quaerat quibusdam nemo vitae?</a></li>
+      <li><a href="">Porro, odit? Eveniet illum dolorum odit inventore voluptates, doloremque hic assumenda mollitia quaerat, quo fuga labore dolore? Tempora earum expedita cum vitae nihil adipisci sunt beatae necessitatibus libero, velit omnis?</a></li>
+      <li><a href="">Veritatis at, obcaecati officia harum aliquam quos enim magni hic ad vero recusandae amet accusamus deserunt rerum quas voluptate consectetur! Ea ut, distinctio incidunt quos libero animi maiores quo alias!</a></li>
+      <li><a href="">Excepturi ut quas nobis! Quisquam consectetur et dignissimos unde, repellendus ratione eius, assumenda temporibus eligendi ipsam dicta error cumque ex ut at qui. Commodi nihil beatae sint a quod quibusdam!</a></li>
+      <li><a href="">Voluptate maxime sed cumque id, voluptas placeat laborum doloremque saepe quae sint adipisci quas a minima ad suscipit libero excepturi cupiditate autem consequatur maiores corrupti perspiciatis necessitatibus facere distinctio? Ipsa?</a></li>
+      <li><a href="">Temporibus eaque laborum esse repellat corporis, tempora, optio quis illum quisquam necessitatibus nemo animi sint accusantium quo. Quod quaerat earum perferendis asperiores cupiditate at ullam optio, repellendus magnam voluptatibus ab.</a></li>
+      <li><a href="">Voluptatem tempora iusto architecto quas, ad libero impedit quibusdam vel. Quaerat, illum eveniet! Dicta quas placeat eos enim, nemo culpa corporis ullam alias distinctio temporibus quibusdam fuga recusandae perferendis omnis?</a></li>
+      <li><a href="">Repellat atque perferendis cumque autem culpa omnis, dolorum temporibus est illum, assumenda, praesentium veritatis! Eos, hic quidem? Libero, ex tempora eveniet explicabo recusandae magnam sapiente nostrum, iure dolores labore aspernatur!</a></li>
+      <li><a href="">Eveniet dicta hic explicabo, officia laboriosam facere quasi quidem itaque! Atque dolorum cumque rem magni! Recusandae est autem, maxime vero, deserunt possimus cupiditate, expedita sapiente impedit tempore quasi alias incidunt!</a></li>
+      <li><a href="">Temporibus odit tempora corrupti, nesciunt accusamus itaque corporis ratione praesentium exercitationem sunt nihil obcaecati dolor esse cupiditate totam incidunt eaque vero dolorum numquam error quam eius adipisci doloribus. Voluptate, quae.</a></li>
+      <li><a href="">Vel consequatur facilis ea fugiat? Porro, quia nam suscipit a repudiandae ducimus est quidem accusamus illo voluptatem dignissimos sint perferendis assumenda possimus rerum cum? Qui, dignissimos debitis? Dicta, tempora unde?</a></li>
+      <li><a href="">Amet, fugiat ipsa? Quo mollitia quam nihil consequatur officiis cumque laborum exercitationem ut eveniet doloribus optio sit ab aliquam provident voluptates fuga hic quidem aut veniam a aspernatur, unde officia.</a></li>
+      <li><a href="">Nam veniam laboriosam quaerat corporis. Ratione iure quod quis nobis, nulla architecto beatae in, officiis, sit tenetur aliquam! A molestiae facilis optio minus explicabo fugiat nihil quae eum eius dolores!</a></li>
+      <li><a href="">At consequuntur, exercitationem officia soluta corrupti hic earum magnam sequi delectus accusantium, vero repudiandae eaque maxime odit fugit suscipit veritatis iure. Veniam optio eveniet facilis cumque ab molestias excepturi saepe?</a></li>
+      <li><a href="">Officia eaque autem dignissimos nisi eveniet nostrum earum, necessitatibus, placeat debitis nulla quibusdam beatae quas in expedita error qui? Ad numquam sint quisquam facere veniam ducimus molestias necessitatibus soluta ipsum.</a></li>
+      <li><a href="">Ut ad tenetur voluptas nesciunt non eligendi nobis deleniti quasi necessitatibus dolores, quas distinctio repellendus veritatis eum maxime architecto at nihil atque! In illum aspernatur minus hic itaque, magni harum!</a></li>
+  </ul>
   <script>
     // Get your shorts on - this is an array workout!
     // ## Array Cardio Day 1
@@ -38,28 +61,100 @@
     // Array.prototype.filter()
     // 1. Filter the list of inventors for those who were born in the 1500's
 
+    // Filters work by keeping, or removing from an array based on the arguments
+    const fifteens = inventors.filter(function(inventor) {
+        if(inventor.year >= 1500 && inventor.year < 1600) {
+            return true;  //Return true is basically saying 'keep it', if it's not true, remove it.
+        }
+    });
+    //console.log(fifteens);
+    console.table(fifteens); //this is a nicer way of showing arrays in the console.
+
     // Array.prototype.map()
     // 2. Give us an array of the inventors first and last names
+
+    // Map takes an array and returns a new array with the same amount as items fed in.
+    const fullNames = inventors.map(function(inventor) {
+        return `${inventor.first} ${inventor.last}`;
+    });
+
 
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
 
+    // Sort works by taking two values, comparing them, and deciding which comes first, until they've all been sorted. 
+    // 1 or -1 is returned, 1 = goes above in the comparison, -1 = comes after.
+    const dateOrdered = inventors.sort(function(a,b) {
+        if(a.year > b.year) {
+            return 1;
+        } else {
+            return -1;
+        }
+    });
+
+    // This can be massively simplified by combining arrow functions and ternaries
+    const ordered = inventors.sort((a, b) => a.yaer > b.year ? 1 : -1);
+
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live all together?
 
+    // A reduce filter provides a cumulative value based on arguments met
+    const totalYears = inventors.reduce((total, inventor) => {
+        return total + (inventor.passed - inventor.year);
+    }, 0);
+    // the 0 at the end is to give the accumulator a place to start
+    console.log(totalYears);
+    console.table(inventors);
+
     // 5. Sort the inventors by years lived
 
-    // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
-    // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+    //Sorting works by comparing a and b. This is done until all entires are compared
+    //and sorted using -1 and 1 as before.
+    const oldest = inventors.sort(function(a,b) {
+        const lastInv = a.passed = a.year;
+        const firstInv = b.passed - b.year;
+        return lastInv > firstInv ? -1 : 1;
+    });
+
+    // 6. create an array from a list, and find any entries that contain
+    // the word 'lorem'.
+
+    //grab the list
+    const list = document.querySelector('.to-sort');
+    //grab each <a> within that list and add it to an array
+    const listItems = Array.from(list.querySelectorAll('a'));
+
+    const lorem = listItems
+                .map(listItem => listItem.textContent)
+                .filter(listText => listText.includes('lorem'));
+
+    // It's worth noting that this is case sensitive. To combat this, we could convert each string to lower/uppercase first.
 
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
+    const alphaSort = people.sort(function(a, b) {
+        const [aLast, aFirst] = a.split(', ');
+        const [bLast, bFirst] = b.split(', ');
+        return aLast > bLast ? 1 : -1;
+    });
+
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
 
+    const transport = data.reduce(function(object, type) {
+        //if no type in obect, create one and set to 0
+        if(!object[type]) { 
+            object[type] = 0;
+        }
+        //if object in object, add one, return to move onto next item in array
+        object[item]++;
+        return object;
+    },{}); //create a default object
+
   </script>
+  <script src="./array-cardio.js"></script>
 </body>
 </html>
